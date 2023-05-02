@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Face Recognition</string>
+    <string name="permissions_not_granted">Camera usage permissions are not granted.</string>
+    <string name="camera_preview">Camera preview</string>
+    <string name="face_identification_preview">Face recognition preview</string>
+    <string name="distance_from_target">(distance from target)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register_new_identity">Register new identity</string>
+    <string name="add_this_identity">Add this identity</string>
+    <string name="identity_name">Identity name</string>
+    <string name="identity_added">Identity \'%1$s\' added.</string>
+</resources>

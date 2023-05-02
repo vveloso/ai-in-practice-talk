@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Anime Camera</string>
+    <string name="permissions_not_granted">No permissions to use the camera.</string>
+    <string name="captured_picture">This is the processed image.</string>
+    <string name="take_picture">Take a picture</string>
+    <string name="picture_not_captured">Picture could not be captured.</string>
+    <string name="processing_wait">Processing, please wait a moment...</string>
+</resources>
