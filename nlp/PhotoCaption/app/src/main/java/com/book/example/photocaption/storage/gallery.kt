@@ -42,7 +42,7 @@ suspend fun saveImageToGallery(context: Context, image: ImageProxy, description:
 
 private fun saveWithComment(image: ImageProxy, comment: String, output: OutputStream) {
     val outputSet = TiffOutputSet()
-    outputSet.orCreateExifDirectory.add(EXIF_TAG_USER_COMMENT, comment)
+    outputSet.orCreateExifDirectory.add(EXIF_TAG_USER_COMMENT, comment) // also see https://exiftool.org/TagNames/EXIF.html
     outputSet.rootDirectory.add(TIFF_TAG_ORIENTATION, orientation(image))
     ExifRewriter().updateExifMetadataLossless(
         image.jpegData,
