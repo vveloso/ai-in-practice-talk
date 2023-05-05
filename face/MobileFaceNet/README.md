@@ -11,3 +11,5 @@ version. The scripts used are available in the conversation around the
 project issue in GitHub.
 
 We make this file available as a derived work of the above mentioned model.
+
+Face photo by Jurica Koletić on Unsplash.
