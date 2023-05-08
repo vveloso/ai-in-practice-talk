@@ -22,9 +22,6 @@ test_images = test_images / 255.0
 draw.show_image(train_images[60])
 
 # %%
-draw.draw_set_samples(train_images, train_labels)
-
-# %%
 
 classes = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
            'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
@@ -50,11 +47,11 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(),
               metrics=['accuracy'])
 
-history = model.fit(train_images, train_labels, 
+history = model.fit(tf.expand_dims(train_images, 3), train_labels, 
                     epochs=10, 
                     validation_split=0.1)
 
-test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
+test_loss, test_acc = model.evaluate(tf.expand_dims(test_images, 3),  test_labels, verbose=2)
 
 draw.plot_history(history)
 
