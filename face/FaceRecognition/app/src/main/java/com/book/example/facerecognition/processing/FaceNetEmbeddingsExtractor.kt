@@ -25,7 +25,7 @@ class FaceNetEmbeddingsExtractor(context: Context): AutoCloseable {
     init {
         modelFile = FileUtil.loadMappedFile(
             context, "mobilefacenet.tflite")
-        interpreter = Interpreter(modelFile)
+        interpreter = Interpreter(modelFile, Interpreter.Options())
 
         inputTensor = interpreter.getInputTensor(0)
         val inputShape = inputTensor.shape() // {1, width, height, channels}
