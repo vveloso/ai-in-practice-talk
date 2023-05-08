@@ -23,11 +23,6 @@ draw.show_image(train_images[60])
 
 # %%
 
-classes = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
-           'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-
-# %%
-
 # Training an improved model
 # see "Fashion- MNIST with tf.Keras", Margaret Maynard-Reid, 2018
 
