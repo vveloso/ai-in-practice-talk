@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Image Recognition</string>
+    <string name="permissions_not_granted">Required permissions were not granted.</string>
+    <string name="waiting_for_result">Waiting for result...</string>
+</resources>

@@ -1,0 +1,5 @@
+rootProject.name = "Image Recognition"
+include ':app'
+include ':tensorflow_lite_interpreter'
+include ':tensorflow_lite_task'
+include ':classifier_common'
