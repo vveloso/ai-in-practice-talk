@@ -21,34 +21,19 @@ gpt2_lm = keras_nlp.models.GPT2CausalLM.from_preset("gpt2_base_en", preprocessor
 
 # %%
 
-start = time.time()
-
 output = gpt2_lm.generate("My trip to Yosemite was", max_length=200)
 print("\nGPT-2 output:")
 print(output.numpy().decode("utf-8"))
 
-end = time.time()
-print("TOTAL TIME ELAPSED: ", end - start)
-
 # %%
-
-start = time.time()
 
 output = gpt2_lm.generate("That Italian restaurant is", max_length=200)
 print("\nGPT-2 output:")
 print(output.numpy().decode("utf-8"))
 
-end = time.time()
-print("TOTAL TIME ELAPSED: ", end - start)
-
 # %%
 
-start = time.time()
-
 cnn_ds = tfds.load('cnn_dailymail', as_supervised=True)
-
-end = time.time()
-print("TOTAL TIME ELAPSED: ", end - start)
 
 # %%
 
@@ -107,18 +92,28 @@ def load_texts():
         restored_texts.extend(data[file].tolist())
     return restored_texts
 
+# %%
+
 # Save the list of short combinations of articles and summaries (sort of a checkpoint).
 save_texts(short_texts)
 
 # %%
 
-# short_texts = load_texts()
+short_texts = load_texts()
+
+tiny_texts = list()
+for text in short_texts:
+    if len(text.numpy()) < 512:
+        tiny_texts.append(text)
+
 
 # %%
 
-tf_train_ds = tf.data.Dataset.from_tensor_slices(short_texts)
+train_texts=tiny_texts
+
+tf_train_ds = tf.data.Dataset.from_tensor_slices(train_texts)
 processed_ds = tf_train_ds.map(gpt2_preprocessor, tf.data.AUTOTUNE).batch(20).cache().prefetch(tf.data.AUTOTUNE)
-part_of_ds = processed_ds.take(100)
+part_of_ds = processed_ds.take(20)
 
 # %%
 
