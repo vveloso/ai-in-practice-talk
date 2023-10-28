@@ -104,7 +104,7 @@ short_texts = load_texts()
 tiny_texts = list()
 for text in short_texts:
     if len(text.numpy()) < 512:
-        tiny_texts.append(text)
+        tiny_texts.append(str(text.numpy()))
 
 
 # %%

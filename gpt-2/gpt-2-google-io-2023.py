@@ -89,7 +89,7 @@ num_articles_to_process = 20000
 progressbar_update_freq = 2000
 
 widgets = [' [',
-         progressbar.Timer(format= 'elapsed time: %(elapsed)s'),
+         progressbar.Timer(format= 'elapsed time: %s'),
          '] ',
            progressbar.Bar('*'),' (',
            progressbar.ETA(), ') ',
@@ -97,7 +97,7 @@ widgets = [' [',
 
 # Render a progressbar to track progress
 bar = progressbar.ProgressBar(
-    max_value=num_articles_to_process // progressbar_update_freq + 2,
+    maxval=num_articles_to_process // progressbar_update_freq + 2,
     widgets=widgets).start()
 
 for article, highlight in cnn_ds['train']:
