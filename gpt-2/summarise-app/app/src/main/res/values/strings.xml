@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GPT-2 Summarise</string>
+
+    <string name="summarise">Summarise</string>
+    <string name="initialising">Initialising</string>
+    <string name="working">Working…</string>
+    <string name="demo_text">The House GOP\'s two candidates for speaker detailed their plans during a closed-door meeting on Tuesday for avoiding a government shutdown - a key issue for members, and one that sank Kevin McCarthy\'s speakership. House Majority Leader Steve Scalise and Judiciary Chairman Jim Jordan made their pitches during the Tuesday meeting ahead of a conference vote for speaker on Wednesday, but GOP lawmakers made clear that the conference remains divided, and there\'s a heavy dose of skepticism among Republicans that they will quickly coalesce around either candidate to be the next speaker.</string>
+</resources>
